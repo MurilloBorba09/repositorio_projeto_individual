@@ -1,26 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilo_individual.css" />
 
     <title>O Nerd Polar</title>
+  </head>
+  <body>
 
-</head>
-<body>
-    
-    <div class="login_banner">
-
+    <div class="header">
         <div class="container">
-            Seu email:
-            <input type="text" placeholder="Insira seu email">
-            Sua senha:
-            <input type="text" placeholder="Insira sua senha">
+          <h1><a href="home_indiv.html">O Nerd Polar</h1>
+  
+          <ul class="navbar">
+            <li class="btn_header">
+              <a href="sobre_mim_indiv.html">Sobre Mim</a>
+            </li>
+  
+            <li class="btn_header"><a href="login_indiv.html">Login</a></li>
+  
+            <li class="btn_header">
+              <a href="cadastro_indiv.html">Cadastre-se</a>
+            </li>
+          </ul>
         </div>
-
     </div>
 
-</body>
+    <div class="banner">
+        <div class="container">
+            <div class="container_card">
+                <div class="card_login">
+
+                    <h1>Informe:</h1>
+                    <span class="tipo_campo">Seu e-mail:</span>
+                    <input id="email_input" type="text" placeholder="Login">
+
+                    <span class="tipo_campo">Sua senha:</span>
+                    <input id="senha_input" type="password" placeholder="******">
+
+                    <button class="btn" onclick="entrar()">Entrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+  
+          <h4>
+            Para receber mais histórias, reviews e notícias como essas, e também
+            bater um papo comigo, se cadastre!
+          </h4>
+  
+          <h5>
+            Escreva sua opinião e dê uma nota de 1 a 10 para o site logo abaixo:
+          </h5>
+  
+          <input type="text" />
+  
+          <select id="select_nota">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="0">10</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
