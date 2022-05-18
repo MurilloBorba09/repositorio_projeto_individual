@@ -60,12 +60,18 @@ body {
 .banner .container {
   color: black;
   width: 100vw;
-  height: 80vh;
+  height: 50vh;
   margin: auto;
 }
 
 .banner a {
   text-decoration: none;
+}
+
+
+.sobremim_banner .container {
+  width: 90vw;
+  height: 50vh;
 }
 
 /* CSS do Card Sobre Mim */
