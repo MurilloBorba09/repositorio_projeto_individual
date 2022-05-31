@@ -74,6 +74,18 @@ body {
   height: 50vh;
 }
 
+.batman_materia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.img_batman {
+  width: 20%;
+  height: 20%;
+}
+
 /* CSS do Card Sobre Mim */
 
 
