@@ -81,7 +81,7 @@ body {
   flex-direction: column;
 }
 
-.img_batman {
+a .img_batman {
   width: 20%;
   height: 20%;
 }
@@ -120,13 +120,18 @@ body {
 
 .footer {
   display: flex;
-  background-color: blueviolet;
+  background-color: black;
+  color: white;
   padding: 0;
   margin-top: 10%;
   align-self: baseline;
+  border-top: 5px solid #c40000;
+  height: 120px;
 }
 
 .footer .container {
+  display: flex;
   width: 95%;
   margin: auto;
+  height: 90%;
 }
