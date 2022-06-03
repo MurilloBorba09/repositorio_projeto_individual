@@ -7,8 +7,7 @@ use projeto_individual;
 create table usuario (
 	idUsuario int primary key auto_increment,
     email varchar (90),
-	nomeUsuario varchar (90),
-	sobrenomeUsuario varchar (90),
+	nome varchar (90),
 	senha varchar (80),
 	estado char (2),
     cidade varchar (60),

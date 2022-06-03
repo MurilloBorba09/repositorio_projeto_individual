@@ -145,10 +145,15 @@ a .img_onepiece {
 
 /* CSS do Card do Login */
 
+
+
 .container_card {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  height: 100%;
 }
 
 .container_card .card_login {
@@ -159,10 +164,31 @@ a .img_onepiece {
   padding: 2%;
   flex-direction: column;
   background-color: red;
-  width: 300px;
+  width: 320px;
   height: fit-content;
   align-items: center;
-  ;
+  height: 34%;
+}
+
+.card_cadastro_login {
+  display: flex;
+  margin-top: 7%;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+  flex-direction: column;
+  background-color: red;
+  width: 320px;
+  height: 20%;
+  align-items: center;
+  border-radius: 20%;
+  height: 34%;
+}
+
+.div_card_cadastro {
+  font-size: 20px;
+  color: aqua;
+  /* background-color: black; */
 }
 
 /* CSS do Footer */

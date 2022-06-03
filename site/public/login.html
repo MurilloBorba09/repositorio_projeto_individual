@@ -12,26 +12,29 @@
 
     <div class="header">
         <div class="container">
-          <a href="home_indiv.html"><video autoplay muted loop poster src="IMG & VID\O NERd polar.mp4" 
+          <a href="index.html"><video autoplay muted loop poster src="./assets/O NERd polar.mp4" 
             class="bg_video_logo" type="video/mp4"></video></a>
   
           <ul class="navbar">
             <li class="btn_header">
-              <a href="sobre_mim_indiv.html">Sobre Mim</a>
+              <a href="sobre_mim.html">Sobre Mim</a>
             </li>
   
-            <li class="btn_header"><a href="login_indiv.html">Login</a></li>
+            <li class="btn_header"><a href="login.html">Login</a></li>
   
             <li class="btn_header">
-              <a href="cadastro_indiv.html">Cadastre-se</a>
+              <a href="cadastro.html">Cadastre-se</a>
             </li>
           </ul>
         </div>
     </div>
 
     <div class="banner">
+
         <div class="container">
+
             <div class="container_card">
+
                 <div class="card_login">
 
                     <h1>Informe:</h1>
@@ -44,8 +47,21 @@
                     <button class="btn" onclick="entrar()">Entrar</button>
 
                 </div>
+
+                <div class="card_cadastro_login">
+
+                  <h1>Não é cadastrado ?</h1>
+
+                  <div class="div_card_cadastro">
+                  <a href="cadastro.html">Cadastre-se!</a>
+                  </div>
+
+                </div>
+
             </div>
+
         </div>
+
     </div>
 
     <div class="footer">
@@ -131,7 +147,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "./materias.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
