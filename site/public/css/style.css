@@ -55,6 +55,8 @@ body {
 .banner {
   display: flex;
   height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .banner .container {
@@ -129,20 +131,52 @@ a .img_onepiece {
 
 /* CSS do Card do Batman */
 
+.bg_video_batman {
+  width: 98%;
+  margin: 1%;
+}
+
+.bg_video_onepiece {
+  width: 98%;
+  margin: 1%;
+}
+
+.card_batman {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.background_img_onepiece {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(assets\616945.png);
+}
+
+.card_onepiece {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card_batman .container {
+  height: 20%;
+  width: 65%;
+}
+
+.card_onepiece .container {
+  height: 20%;
+  width: 65%;
+}
+
 .container_video {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 1%;
-}
-
-.bg_video_batman {
-  width: 80%;
-  margin: 1;
-}
-
-.card_batman .container {
-  height: 20%;
 }
 
 /* CSS do Card do Login */
@@ -219,7 +253,7 @@ a .img_onepiece {
   height: 120px;
   background-color: rgb(40, 39, 39);
   color: white;
-  padding: 0;
+  padding: 1%;
   margin-top: 7%;
   align-self: baseline;
   font-family:cursive;
