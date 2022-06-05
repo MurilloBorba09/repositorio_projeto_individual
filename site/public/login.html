@@ -1,116 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
 
-    <title>O Nerd Polar</title>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
 
-    <div class="header">
+  <title>O Nerd Polar</title>
 
-        <div class="container">
+</head>
 
-          <a href="index.html"><video autoplay muted loop poster src="./assets/O NERd polar.mp4" 
-            class="bg_video_logo" type="video/mp4"></video></a>
-  
-          <ul class="navbar">
-            <li class="btn_header">
-              <a href="sobre_mim.html">Sobre Mim</a>
-            </li>
-  
-            <li class="btn_header"><a href="login.html">Login</a></li>
-  
-            <li class="btn_header">
-              <a href="cadastro.html">Cadastre-se</a>
+<body style="overflow:hidden">
 
-            </li>
+  <div class="header">
 
-          </ul>
+    <div class="container">
 
-        </div>
+      <a href="index.html"><video autoplay muted loop poster src="./assets/O NERd polar (1).mp4" class="bg_video_logo"
+          type="video/mp4"></video></a>
+
+      <ul class="navbar">
+
+        <li class="btn_header">
+          <a href="sobre_mim.html">Sobre Mim</a>
+        </li>
+
+        <li class="btn_header">
+          <a href="cadastro.html">Cadastro</a>
+
+        </li>
+
+      </ul>
 
     </div>
 
-    <div class="banner">
+  </div>
 
-        <div class="container">
+  <div class="banner">
 
-            <div class="container_card">
+    <div class="container">
 
-                <div class="card_login">
+      <div class="container_card">
 
-                    <h1>Informe:</h1>
-                    <span class="tipo_campo">Seu e-mail:</span>
-                    <input id="email_input" type="text" placeholder="Login">
+        <div class="card_login">
 
-                    <span class="tipo_campo">Sua senha:</span>
-                    <input id="senha_input" type="password" placeholder="******">
+          <div class="login_box">
 
-                    <button class="btn" onclick="entrar()">Entrar</button>
+            <h1>Informe:</h1>
+            <span class="tipo_campo">Seu e-mail:</span>
+            <input class="input_login" id="email_input" type="text" placeholder="E-mail">
 
-                </div>
+            <span class="tipo_campo">Sua senha:</span>
+            <input class="input_login" id="senha_input" type="password" placeholder="********">
 
-                <div class="card_cadastro_login">
-
-                  <h1>Não é cadastrado ?</h1>
-
-                  <div class="div_card_cadastro">
-                  <a href="cadastro.html">Cadastre-se!</a>
-                  </div>
-
-                </div>
+            <button class="btn_login" onclick="entrar()">Entrar</button>
 
             </div>
 
         </div>
 
-    </div>
+        <div class="card_cadastro_login">
 
-    <div class="footer">
+          <h1>Não é cadastrado ?</h1>
 
-      <div class="container">
-  
-        <h4>
-          Para receber mais histórias, reviews e notícias como essas, e também
-          bater um papo comigo, se cadastre!
-        </h4>
-  
-        <div class="footer_opiniao">
-  
-          <h5>
-            Escreva sua opinião e dê uma nota de 1 a 10 para o site logo abaixo:
-          </h5>
-  
-          <input type="text" />
-  
-          <select id="select_nota" class="box_nota">
-  
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="0">10</option>
-  
-          </select>
-  
-          <button onclick="btn_enviar_opiniao" class="btn_footer">Enviar</button>
-  
+          <div class="tipo_campo">
+            <a style="color: red; font-size: 30px; font-weight: 1000;" href="cadastro.html">Cadastre-se!</a>
+          </div>
+
         </div>
-  
+
       </div>
-  
+
     </div>
 
-  </body>
+  </div>
+
+  <div class="footer_login">
+
+  </div>
+
+</body>
 
 </html>
 
@@ -119,70 +89,74 @@
 <script>
 
 
-    function entrar() {
+  function entrar() {
 
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
 
-        if (emailVar == "" || senhaVar == "") {
-            alert("prencheeee")
-            return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
-
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
-
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-
-                    setTimeout(function () {
-                        window.location = "./materias.html";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
+    if (emailVar == "" || senhaVar == "") {
+      alert("Preencha todos os campos para prosseguir!")
+      return false;
+    }
+    else if (emailVar.indexOf('@') == -1) {
+      // console.log("Insira um email válido!")
+      alert("Insira um email válido!")
+    }
+    else {
+      setInterval(sumirMensagem, 5000)
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
+
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        emailServer: emailVar,
+        senhaServer: senhaVar
+      })
+    }).then(function (resposta) {
+      console.log("ESTOU NO THEN DO entrar()!")
+
+      if (resposta.ok) {
+        console.log(resposta);
+
+        resposta.json().then(json => {
+          console.log(json);
+          console.log(JSON.stringify(json));
+
+          sessionStorage.EMAIL_USUARIO = json.email;
+          sessionStorage.NOME_USUARIO = json.nome;
+          sessionStorage.ID_USUARIO = json.id;
+
+          setTimeout(function () {
+            window.location = "./materias.html";
+          }, 1000); // apenas para exibir o loading
+
+        });
+
+      } else {
+
+        console.log("Houve um erro ao tentar realizar o login!");
+
+        resposta.text().then(texto => {
+          console.error(texto);
+          finalizarAguardar(texto);
+        });
+      }
+
+    }).catch(function (erro) {
+      console.log(erro);
+    })
+
+    return false;
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none"
+  }
 
 </script>
