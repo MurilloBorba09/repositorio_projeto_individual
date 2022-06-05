@@ -72,12 +72,19 @@ function cadastrar(req, res) {
                 res.json(resultado);
             }
         ).catch(
+
             function (erro) {
+                
                 console.log(erro);
                 console.log(
                     "\nHouve um erro ao realizar o cadastro! Erro: ",
                     erro.sqlMessage
                 );
+
+                if (sqlMessage.indexOf('Duplicate entry') == true) {
+                    alert("Usuário já cadastrado")
+                }
+
                 res.status(500).json(erro.sqlMessage);
             }
         );

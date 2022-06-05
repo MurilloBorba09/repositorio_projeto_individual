@@ -15,7 +15,9 @@
 <body>
 
     <div class="header">
+
         <div class="container">
+
             <a href="index.html"><video autoplay muted loop poster src="./assets/O NERd polar.mp4" class="bg_video_logo"
                     type="video/mp4"></video></a>
 
@@ -28,9 +30,13 @@
 
                 <li class="btn_header">
                     <a href="cadastro.html">Cadastre-se</a>
+
                 </li>
+
             </ul>
+
         </div>
+
     </div>
 
     <div class="banner">
@@ -67,42 +73,43 @@
 
     <div class="footer">
 
-        <div class="container">
+    <div class="container">
 
-            <h4>
-                Para receber mais histórias, reviews e notícias como essas, e também
-                bater um papo comigo, se cadastre!
-            </h4>
+      <h4>
+        Para receber mais histórias, reviews e notícias como essas, e também
+        bater um papo comigo, se cadastre!
+      </h4>
 
-            <div class="footer_opiniao">
+      <div class="footer_opiniao">
 
-                <h5>
-                    Escreva sua opinião e dê uma nota de 1 a 10 para o site logo abaixo:
-                </h5>
+        <h5>
+          Escreva sua opinião e dê uma nota de 1 a 10 para o site logo abaixo:
+        </h5>
 
-                <input type="text" />
+        <input type="text" />
 
-                <select id="select_nota">
+        <select id="select_nota" class="box_nota">
 
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="0">10</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="0">10</option>
 
-                </select>
+        </select>
 
-            </div>
+        <button onclick="btn_enviar_opiniao" class="btn_footer">Enviar</button>
 
-        </div>
+      </div>
 
     </div>
 
+  </div>
 </body>
 
 </html>
@@ -118,9 +125,17 @@
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            alert('preenche lixo')
+            alert('Preencha todos os campos!')
             return false;
         }
+        else if (emailVar.indexOf('@') == -1) {
+            console.log("Insira um email válido!")
+            // alert("Insira um email válido!")
+        } 
+        else if (senhaVar != confirmacaoSenhaVar) {
+            console.log("Senha de confirmação está diferente!")
+            // alert("Senha de confirmação está diferente!")
+        } 
         else {
 
             // Enviando o valor da nova input
@@ -130,12 +145,14 @@
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
+
                     // crie um atributo que recebe o valor recuperado aqui
                     // Agora vá para o arquivo routes/usuario.js
                     nomeServer: nomeVar,
                     emailServer: emailVar,
                     senhaServer: senhaVar
                 })
+
             }).then(function (resposta) {
 
                 console.log("resposta: ", resposta);
@@ -147,7 +164,9 @@
                     }, "2000")
 
                 } else {
+                    alert("Usuário já cadastrado!")
                     throw ("Houve um erro ao tentar realizar o cadastro!");
+                    console.log("Pamonha")
                 }
             }).catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
