@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <script src="js/funcoes.js"></script>
 
     <title>O Nerd Polar</title>
   </head>
 
-  <body>
+  <body onload="validarSessao()">
 
     <div class="header">
 
@@ -49,7 +50,8 @@
             <h2>O anime do Piratinha que Estica</h2>
 
             <h4>
-
+              Nessa matéria eu contarei minha opinião sobre o anime One Piece: o quanto
+              eu gosto dele, quão importante foi, e é para mim.
             </h4>
 
             <p></p>
@@ -62,7 +64,7 @@
 
     </div>
 
-    <div class="footer">
+    <div id="footer_onepiece" class="footer">
 
     <div class="container">
 
@@ -77,9 +79,9 @@
           Escreva sua opinião e dê uma nota de 1 a 10 para o site logo abaixo:
         </h5>
 
-        <input type="text" />
+        <input type="text" class="input_nota" style="color: white;" placeholder="Diga sua opinião!" />
 
-        <select id="select_nota" class="box_nota">
+        <select id="select_nota" class="box_nota" style="color: white;">
 
           <option value="1">1</option>
           <option value="2">2</option>

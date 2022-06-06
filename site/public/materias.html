@@ -7,12 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/style.css">
+  <script src="js/funcoes.js"></script>
 
   <title>O Nerd Polar</title>
 
 </head>
 
-<body>
+<body onload="validarSessao()">
 
   <div class="header">
 
@@ -20,6 +21,8 @@
 
       <a href="materias.html"><video autoplay muted loop poster src="./assets/O NERd polar (1).mp4" class="bg_video_logo"
           type="video/mp4"></video></a>
+
+        <div class="h1_nome" id="h1_nome"></div>
 
       <ul class="navbar">
 
@@ -86,9 +89,9 @@
           Escreva sua opinião e dê uma nota de 1 a 10 para o site logo abaixo:
         </h5>
 
-        <input type="text" />
+        <input type="text" class="input_nota" style="color: white;" placeholder="Diga sua opinião!" />
 
-        <select id="select_nota" class="box_nota">
+        <select id="select_nota" class="box_nota" style="color: white;">
 
           <option value="1">1</option>
           <option value="2">2</option>

@@ -7,12 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/style.css" />
+  <script src="js/funcoes.js"></script>
 
   <title>O Nerd Polar</title>
 
 </head>
 
-<body>
+<body onload="validarSessao()">
 
   <div class="header">
 
@@ -38,24 +39,48 @@
 
   <div class="banner">
 
-    <div class="card_batman">
+    <div class="background_img_batman">
 
-      <div class="container_video">
-        <video autoplay muted loop poster src="./assets/One of the most EPIC scene from the Batman movie! (online-video-cutter.com).mp4"
-          class="bg_video_batman" type="video/mp4"></video>
-      </div>
+      <div class="card_batman">
 
-      <div class="container">
+        <div class="container_video">
+          <video autoplay muted loop poster src="./assets/One of the most EPIC scene from the Batman movie! (online-video-cutter.com).mp4"
+            class="bg_video_batman" type="video/mp4"></video>
+        </div>
 
-        <h2>O Maior fã de Batman</h2>
+        <div class="container">
 
-        <h4>
-          Nessa matéria eu contarei minha opinião sobre o herói Batman: o quanto
-          eu gosto dele, quão importante foi, e é, para mim e também darei algumas
-          notícias.
-        </h4>
+          <h2>O Maior fã de Batman</h2>
 
-        <p></p>
+          <h4>
+            Nessa matéria eu contarei minha opinião sobre o herói Batman: o quanto
+            eu gosto dele, quão importante foi, e é, para mim.
+          </h4>
+
+          <p>
+            Para mim, o Batman sempre foi o maior herói de todos. 
+            Desde pequeno, influenciado pelo meu pai que sempre foi muito fã de Superman, 
+            Batman e heróis em geral, já era fissionado pelas histórias desse personagem, 
+            frequentemente me fantasiando dele, e me imaginando na pele dele combatendo o crime. 
+            Tendo assistido todos os filmes dele, e hoje sendo considerado pelos meus amigos um “especialista” de Batman, 
+            me orgulho muito de falar que ele é o maior herói de todos os tempos, e que eu acompanhei isso, 
+            principalmente vendo a obra que foi o último filme (The Batman). 
+            Agora, partindo para minha análise sobre o personagem, é necessário dizer: Que personagem incrível! 
+            Com uma história sensacional, onde um garoto (Bruce Wayne) perde os pais, em um assalto, 
+            logo no início de sua vida, e se culpa por isso pelo resto dela. E com esse sentimento, 
+            essa melancolia agoniante, e ainda almejando vingança, ele treina ao máximo que seu corpo dá conta, 
+            e aos 20 e poucos anos se torna o Batman. Além de se culpar pela morte dos pais, 
+            o herói também se culpa pelas pessoas que, a partir daí, ele não conseguiu salvar, 
+            desenvolvendo a gigantesca depressão/melancolia que o personagem carrega consigo. 
+            Com isso, é importante dizer o que o último filme fez para o personagem, 
+            o transformando em um símbolo da esperança. Pois, como é visto no começo, 
+            ele almejava a vingança pela morte dos seus pais, e não a real salvação das pessoas, 
+            agindo muito mais como um carrasco, do que como um verdadeiro herói. 
+            E, no prosseguir do filme, vemos que ele entende seu papel, 
+            e se torna alguém que a população confia, salvando-os ativamente.
+            </p>
+
+        </div>
 
       </div>
 
@@ -63,7 +88,7 @@
 
   </div>
 
-  <div class="footer">
+  <div id="footer_batman" class="footer">
 
     <div class="container">
 
@@ -78,9 +103,9 @@
           Escreva sua opinião e dê uma nota de 1 a 10 para o site logo abaixo:
         </h5>
 
-        <input type="text" />
+        <input type="text" class="input_nota" style="color: white;" placeholder="Diga sua opinião!" />
 
-        <select id="select_nota" class="box_nota">
+        <select id="select_nota" class="box_nota" style="color: white;">
 
           <option value="1">1</option>
           <option value="2">2</option>

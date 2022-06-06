@@ -18,8 +18,8 @@
 
         <div class="container">
 
-            <a href="index.html"><video autoplay muted loop poster src="./assets/O NERd polar (1).mp4" class="bg_video_logo"
-                    type="video/mp4"></video></a>
+            <a href="index.html"><video autoplay muted loop poster src="./assets/O NERd polar (1).mp4"
+                    class="bg_video_logo" type="video/mp4"></video></a>
 
             <ul class="navbar">
                 <li class="btn_header">
@@ -45,16 +45,18 @@
                     <h1>Insira:</h1>
 
                     <span class="tipo_campo">Seu nome de Usuário</span>
-                    <input class="input_login" type="text" id="nome_input" placeholder="Nome">
+                    <input class="input_login" type="text" id="nome_input" placeholder="Nome" style="color: white;">
 
                     <span class="tipo_campo">Seu e-mail:</span>
-                    <input class="input_login" id="email_input" type="text" placeholder="E-mail">
+                    <input class="input_login" id="email_input" type="text" placeholder="E-mail" style="color: white;">
 
                     <span class="tipo_campo">Sua senha:</span>
-                    <input class="input_login" id="senha_input" type="password" placeholder="********">
+                    <input class="input_login" id="senha_input" type="password" placeholder="********"
+                        style="color: white;">
 
                     <span class="tipo_campo">Confirme a senha:</span>
-                    <input class="input_login" id="confirmacao_senha_input" type="password" placeholder="********">
+                    <input class="input_login" id="confirmacao_senha_input" type="password" placeholder="********"
+                        style="color: white;">
 
                     <button class="btn_login" onclick="cadastrar()">Cadastrar</button>
 
@@ -91,11 +93,11 @@
         else if (emailVar.indexOf('@') == -1) {
             // console.log("Insira um email válido!")
             alert("Insira um email válido!")
-        } 
+        }
         else if (senhaVar != confirmacaoSenhaVar) {
             // console.log("Senha de confirmação está diferente!")
             alert("Senha de confirmação está diferente!")
-        } 
+        }
         else {
 
             // Enviando o valor da nova input

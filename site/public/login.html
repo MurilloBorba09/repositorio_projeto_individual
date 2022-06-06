@@ -49,10 +49,10 @@
 
             <h1>Informe:</h1>
             <span class="tipo_campo">Seu e-mail:</span>
-            <input class="input_login" id="email_input" type="text" placeholder="E-mail">
+            <input class="input_login" id="email_input" type="text" placeholder="E-mail" style="color: white;">
 
             <span class="tipo_campo">Sua senha:</span>
-            <input class="input_login" id="senha_input" type="password" placeholder="********">
+            <input class="input_login" id="senha_input" type="password" placeholder="********" style="color: white;">
 
             <button class="btn_login" onclick="entrar()">Entrar</button>
 
@@ -87,7 +87,6 @@
 </html>
 
 <script>
-
 
   function entrar() {
 
@@ -132,9 +131,11 @@
           sessionStorage.NOME_USUARIO = json.nome;
           sessionStorage.ID_USUARIO = json.id;
 
+          // Alerta de login:
+          window.alert("Login feito com sucesso!")
           setTimeout(function () {
             window.location = "./materias.html";
-          }, 1000); // apenas para exibir o loading
+          }, 2000); // apenas para exibir o loading
 
         });
 

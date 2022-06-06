@@ -8,8 +8,7 @@ create table usuario (
 	idUsuario int primary key auto_increment,
     email varchar (90) unique,
 	nome varchar (90),
-	senha varchar (80) unique,
-	estado char (2)
+	senha varchar (80) unique
 ) auto_increment = 101;
 
 desc usuario;
