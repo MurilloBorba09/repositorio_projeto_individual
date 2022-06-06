@@ -90,10 +90,41 @@ function cadastrar(req, res) {
         );
 }
 
+function enviar_nota(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var nota = req.body.notaServer;
+    var opiniao = req.body.opiniaoServer;
+    var idUsuario = req.body.idUsuarioServer;
+
+    usuarioModel.enviar_nota(nota, opiniao, idUsuario)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+
+            function (erro) {
+                
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                    erro.sqlMessage
+                );
+
+                if (sqlMessage.indexOf('Duplicate entry') == true) {
+                    alert("Usuário já cadastrado")
+                }
+
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
 
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    enviar_nota
 }

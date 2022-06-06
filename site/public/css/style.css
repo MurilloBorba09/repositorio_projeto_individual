@@ -48,9 +48,10 @@ a .bg_video_logo {
 
 .h1_nome {
   color: white;
-  font-size: 25px;
+  font-size: 21px;
   align-items: center;
   justify-content: center;
+  margin-left: 10%;
 }
 
 /* CSS do Banner */
@@ -137,21 +138,33 @@ a .img_onepiece {
   align-items: center;
   justify-content: center;
   background-color: rgb(40, 39, 39);
+  padding-bottom: 75px;
 }
 
 .sobremim_banner .container {
   display: flex;
   width: 60%;
-  height: 70vh;
+  height: 80vh;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  color: white;
+  color: rgb(255, 255, 255);
+}
+
+.div_img_sobre_mim {
+  width: 70%;
+  height: 55%;
+  margin-top: 5%;
+}
+
+.div_historia_site {
+  margin-top: 8%;
 }
 
 .img_sobre_mim {
-  width: 40%;
-  height: 70%;
+  width: 50%;
+  height: 110%;
+  object-position: cover;
 }
 
 /* CSS do Card do Batman */
@@ -291,11 +304,11 @@ a .img_onepiece {
 
 .footer {
   display: flex;
-  height: 120px;
+  height: 150px;
   background-color: rgb(40, 39, 39);
   color: white;
   padding: 1%;
-  margin-top: 7%;
+  margin-top: 10%;
   align-self: baseline;
   font-family:cursive;
 }
@@ -336,9 +349,10 @@ a .img_onepiece {
 }
 
 #footer_onepiece {
-  margin: 0;
+  margin: 0%;
 }
 
-.footer_sobre_mim {
-  margin: 0;
+#footer_sobre_mim {
+
+  margin-top: 0;
 }

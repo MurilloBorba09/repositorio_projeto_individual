@@ -1,119 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="js/funcoes.js"></script>
 
-<head>
+    <title>O Nerd Polar</title>
+  </head>
 
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="js/funcoes.js"></script>
-
-  <title>O Nerd Polar</title>
-
-</head>
-
-<body onload="validarSessao()">
-
-  <div class="header">
-
-    <div class="container">
-
-      <a href="materias.html"><video autoplay muted loop poster src="./assets/O NERd polar (1).mp4" class="bg_video_logo"
-          type="video/mp4"></video></a>
+  <body onload="validarSessao()">
+    <div class="header">
+      <div class="container">
+        <a href="materias.html"
+          ><video
+            autoplay
+            muted
+            loop
+            poster
+            src="./assets/O NERd polar (1).mp4"
+            class="bg_video_logo"
+            type="video/mp4"
+          ></video
+        ></a>
 
         <div class="h1_nome" id="h1_nome"></div>
 
-      <ul class="navbar">
+        <ul class="navbar">
+          <li class="btn_header">
+            <a href="níveis.html">Níveis</a>
+          </li>
 
-        <li class="btn_header">
-          <a href="sobre_mim_logado.html">Sobre Mim</a>
-        </li>
+          <li class="btn_header">
+            <a href="sobre_mim_logado.html">SobreMim</a>
+          </li>
 
-        <li class="btn_header"><a href="index.html">Deslogar</a></li>
-
-      </ul>
-
-    </div>
-
-  </div>
-
-  <div class="banner">
-
-    <div class="container">
-
-      <div class="card_home">
-
-        <div class="batman_materia">
-
-          <a href="materia_batman.html"><img class="img_batman"
-            src="./assets/the-batmans-rating-has-been-confirmed_6q2r.avif"> 
-          </a>
-
-          <h4>
-            <a href="materia_batman.html"> The Batmão </a>
-          </h4>
-
-        </div>
-
-        <div class="onepiece_materia">
-
-          <a href="materia_onepiece.html"> 
-            <img class="img_onepiece" src="./assets/img_onepiece.webp">
-          </a>
-
-          <h4>
-            <a href="materia_onepiece.html"> O anime do piratinha que estica </a>
-          </h4>
-
-        </div>
-
+          <li class="btn_header"><a href="index.html">Deslogar</a></li>
+        </ul>
       </div>
-
     </div>
 
-  </div>
+    <div class="banner">
+      <div class="container">
+        <div class="card_home">
+          <div class="batman_materia">
+            <a href="materia_batman.html"
+              ><img
+                class="img_batman"
+                src="./assets/the-batmans-rating-has-been-confirmed_6q2r.avif"
+              />
+            </a>
 
-  <div class="footer">
+            <h4>
+              <a href="materia_batman.html"> The Batmão </a>
+            </h4>
+          </div>
 
-    <div class="container">
+          <div class="onepiece_materia">
+            <a href="materia_onepiece.html">
+              <img class="img_onepiece" src="./assets/img_onepiece.webp" />
+            </a>
 
-      <h4>
-        Para receber mais histórias, reviews e notícias como essas, e também
-        bater um papo comigo, se cadastre!
-      </h4>
-
-      <div class="footer_opiniao">
-
-        <h5>
-          Escreva sua opinião e dê uma nota de 1 a 10 para o site logo abaixo:
-        </h5>
-
-        <input type="text" class="input_nota" style="color: white;" placeholder="Diga sua opinião!" />
-
-        <select id="select_nota" class="box_nota" style="color: white;">
-
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="0">10</option>
-
-        </select>
-
-        <button onclick="btn_enviar_opiniao" class="btn_login">Enviar</button>
-
+            <h4>
+              <a href="materia_onepiece.html">
+                O anime do piratinha que estica
+              </a>
+            </h4>
+          </div>
+        </div>
       </div>
-
     </div>
 
-  </div>
+    <div class="footer">
+      <div class="container">
+        <h4>
+          Para receber mais histórias, reviews e notícias como essas, e também
+          bater um papo comigo, se cadastre!
+        </h4>
 
-</body>
+        <div class="footer_opiniao">
+          <h5>
+            Escreva sua opinião e dê uma nota de 1 a 10 para o site logo abaixo:
+          </h5>
 
+          <input
+            type="text"
+            class="input_nota"
+            style="color: white"
+            placeholder="Diga sua opinião!"
+            id="input_opiniao"
+          />
+
+          <select id="select_nota" class="box_nota" style="color: white">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="0">10</option>
+          </select>
+
+          <button onclick="btn_enviar_opiniao()" class="btn_login">
+            Enviar
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
+
+<script>
+
+  function btn_enviar_opiniao() {
+    var opiniaoVar = input_opiniao.value;
+    var notaVar = Number(select_nota.value);
+    var idUsuarioVar = sessionStorage.ID_USUARIO;
+
+    if (opiniaoVar == "") {
+      alert("Escreva uma opinião antes!");
+    } else {
+      fetch("/usuarios/enviar_nota", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          opiniaoServer: opiniaoVar,
+          notaServer: notaVar,
+          idUsuarioServer: idUsuarioVar
+        }),
+      })
+        .then(function (resposta) {
+          console.log("ESTOU NO THEN DO entrar()!");
+
+          if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then((json) => {
+              console.log(json);
+              console.log(JSON.stringify(json));
+              window.alert("Deu bom");
+            });
+          } else {
+            console.log("Houve um erro ao tentar realizar o login!");
+
+            resposta.text().then((texto) => {
+              console.error(texto);
+            });
+          }
+        })
+        .catch(function (erro) {
+          console.log(erro);
+        });
+
+      return false;
+    }
+  }
+</script>

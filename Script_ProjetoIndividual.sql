@@ -19,7 +19,6 @@ create table nota (
 	idNota int auto_increment,
 	notaSite varchar (2),
 	opiniaoSite varchar (500),
-	notaMateria varchar (2),
 	fkUsuario int,
 	foreign key (fkUsuario) references usuario(idUsuario),
 	primary key (idNota, fkUsuario)
