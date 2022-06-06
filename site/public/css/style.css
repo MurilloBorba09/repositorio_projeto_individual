@@ -202,11 +202,15 @@ a .img_onepiece {
   height: 20%;
   width: 65%;
   color: white;
-padding: 1.2%;}
+  padding: 1.2%;
+}
 
 .card_onepiece .container {
   height: 20%;
   width: 65%;
+  color: black;
+  padding: 1.2%;
+  font-weight: 1000;
 }
 
 .container_video {
