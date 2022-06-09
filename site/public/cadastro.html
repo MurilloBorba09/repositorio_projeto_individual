@@ -1,141 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
 
     <title>O Nerd Polar</title>
+  </head>
 
-</head>
-
-<body style="overflow:hidden;">
-
+  <body style="overflow: hidden">
     <div class="header">
+      <div class="container">
+        <a href="index.html"
+          ><video
+            autoplay
+            muted
+            loop
+            poster
+            src="./assets/O NERd polar (1).mp4"
+            class="bg_video_logo"
+            type="video/mp4"
+          ></video
+        ></a>
 
-        <div class="container">
+        <ul class="navbar">
+          <li class="btn_header">
+            <a href="sobre_mim.html">Sobre Mim</a>
+          </li>
 
-            <a href="index.html"><video autoplay muted loop poster src="./assets/O NERd polar (1).mp4"
-                    class="bg_video_logo" type="video/mp4"></video></a>
-
-            <ul class="navbar">
-                <li class="btn_header">
-                    <a href="sobre_mim.html">Sobre Mim</a>
-                </li>
-
-                <li class="btn_header"><a href="login.html">Login</a></li>
-
-            </ul>
-
-        </div>
-
+          <li class="btn_header"><a href="login.html">Login</a></li>
+        </ul>
+      </div>
     </div>
 
     <div class="banner">
+      <div class="container">
+        <div class="container_card">
+          <div class="card_login">
+            <h1>Insira:</h1>
 
-        <div class="container">
+            <span class="tipo_campo">Seu nome de Usuário</span>
+            <input
+              class="input_login"
+              type="text"
+              id="nome_input"
+              placeholder="Nome"
+              style="color: white"
+            />
 
-            <div class="container_card">
+            <span class="tipo_campo">Seu e-mail:</span>
+            <input
+              class="input_login"
+              id="email_input"
+              type="text"
+              placeholder="E-mail"
+              style="color: white"
+            />
 
-                <div class="card_login">
+            <span class="tipo_campo">Sua senha:</span>
+            <input
+              class="input_login"
+              id="senha_input"
+              type="password"
+              placeholder="********"
+              style="color: white"
+            />
 
-                    <h1>Insira:</h1>
+            <span class="tipo_campo">Confirme a senha:</span>
+            <input
+              class="input_login"
+              id="confirmacao_senha_input"
+              type="password"
+              placeholder="********"
+              style="color: white"
+            />
 
-                    <span class="tipo_campo">Seu nome de Usuário</span>
-                    <input class="input_login" type="text" id="nome_input" placeholder="Nome" style="color: white;">
-
-                    <span class="tipo_campo">Seu e-mail:</span>
-                    <input class="input_login" id="email_input" type="text" placeholder="E-mail" style="color: white;">
-
-                    <span class="tipo_campo">Sua senha:</span>
-                    <input class="input_login" id="senha_input" type="password" placeholder="********"
-                        style="color: white;">
-
-                    <span class="tipo_campo">Confirme a senha:</span>
-                    <input class="input_login" id="confirmacao_senha_input" type="password" placeholder="********"
-                        style="color: white;">
-
-                    <button class="btn_login" onclick="cadastrar()">Cadastrar</button>
-
-                </div>
-
-            </div>
-
+            <button class="btn_login" onclick="cadastrar()">Cadastrar</button>
+          </div>
         </div>
-
+      </div>
     </div>
 
-    <div class="footer_login">
-
-    </div>
-
-</body>
-
+    <div class="footer_login"></div>
+  </body>
 </html>
 
-
 <script>
+  function cadastrar() {
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
-    function cadastrar() {
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == "" ||
+      confirmacaoSenhaVar == ""
+    ) {
+      alert("Preencha todos os campos para prosseguir!");
+      return false;
+    } else if (emailVar.indexOf("@") == -1) {
+      // console.log("Insira um email válido!")
+      alert("Insira um email válido!");
+    } else if (senhaVar != confirmacaoSenhaVar) {
+      // console.log("Senha de confirmação está diferente!")
+      alert("Senha de confirmação está diferente!");
+    } else {
+      // Enviando o valor da nova input
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          nomeServer: nomeVar,
+          emailServer: emailVar,
+          senhaServer: senhaVar,
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
 
-        var nomeVar = nome_input.value;
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
-        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+          if (resposta.ok) {
+            setTimeout(() => {
+              window.location = "login.html";
+            }, "2000");
+          } else {
+            alert("Usuário já cadastrado!");
+            throw "Houve um erro ao tentar realizar o cadastro!";
+            console.log("Pamonha");
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            alert('Preencha todos os campos para prosseguir!')
-            return false;
-        }
-        else if (emailVar.indexOf('@') == -1) {
-            // console.log("Insira um email válido!")
-            alert("Insira um email válido!")
-        }
-        else if (senhaVar != confirmacaoSenhaVar) {
-            // console.log("Senha de confirmação está diferente!")
-            alert("Senha de confirmação está diferente!")
-        }
-        else {
-
-            // Enviando o valor da nova input
-            fetch("/usuarios/cadastrar", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-
-                    // crie um atributo que recebe o valor recuperado aqui
-                    // Agora vá para o arquivo routes/usuario.js
-                    nomeServer: nomeVar,
-                    emailServer: emailVar,
-                    senhaServer: senhaVar
-                })
-
-            }).then(function (resposta) {
-
-                console.log("resposta: ", resposta);
-
-                if (resposta.ok) {
-
-                    setTimeout(() => {
-                        window.location = "login.html";
-                    }, "2000")
-
-                } else {
-                    alert("Usuário já cadastrado!")
-                    throw ("Houve um erro ao tentar realizar o cadastro!");
-                    console.log("Pamonha")
-                }
-            }).catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
-            });
-
-            return false;
-        }
+      return false;
     }
-
+  }
 </script>

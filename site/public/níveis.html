@@ -33,27 +33,21 @@
     </div>
 
     <div class="niveis_banner">
+      <div class="div_grafico_notas">
+        <canvas id="myChart" class="grafico_notas"></canvas>
+      </div>
 
-        <div>
-            <canvas id="myChart"></canvas>
-        </div>
-          
-        <div>
-            <canvas id="myChartBatman"></canvas>
-        </div>
-
+      <div class="div_grafico_batman">
+        <canvas id="myChartBatman" class="grafico_batman"></canvas>
+      </div>
     </div>
-
   </body>
-
 </html>
 
 <script>
-
-var notas = [];
+  var notas = [];
 
   function obterNotas() {
-
     fetch(`/medidas/ultimas`, { cache: "no-store" })
       .then(function (response) {
         if (response.ok) {
@@ -62,7 +56,7 @@ var notas = [];
             for (var i = 0; i < 5; i++) {
               notas[i] = Number(resposta[i].notaSite);
             }
-            plotar_grafico()
+            plotar_grafico();
           });
         } else {
           console.error("Nenhum dado encontrado ou erro na API");
@@ -75,76 +69,68 @@ var notas = [];
       });
   }
 
-  function plotar_grafico () {
-
+  function plotar_grafico() {
     const labels = [
-    '5° Nota',
-    '4° Nota',
-    '3° Nota',
-    '2° Nota',
-    '1° Nota',
-    // '6° Nota'
-  ];
+      "5° Nota",
+      "4° Nota",
+      "3° Nota",
+      "2° Nota",
+      "1° Nota",
+      // '6° Nota'
+    ];
 
-  const data = {
-    labels: labels,
-    datasets: [{
-      label: 'Últimas Notas',
-      backgroundColor: 'rgb(255, 0, 0)',
-      borderColor: 'rgb(255, 0, 0)',
-      data: notas,
-    }]
-  };
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: "Últimas Notas",
+          backgroundColor: "rgb(255, 0, 0)",
+          borderColor: "rgb(255, 0, 0)",
+          data: notas,
+        },
+      ],
+    };
 
-  const config = {
-    type: 'bar',
-    data: data,
-    options: {}
-  };
+    const config = {
+      type: "bar",
+      data: data,
+      options: {},
+    };
 
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
+    const myChart = new Chart(document.getElementById("myChart"), config);
   }
 
-  const labelsBatman = [
-    '1970',
-    '1980',
-    '1990',
-    '2000',
-    '2010',
-    '2020'
-  ];
+  const labelsBatman = ["1970", "1980", "1990", "2000", "2010", "2020"];
 
   const dataBatman = {
     labels: labelsBatman,
-    datasets: [{
-      label: 'Nível de Grandiosidade do Batman',
-      backgroundColor: 'rgb(255, 0, 0)',
-      borderColor: 'rgb(255, 0, 0)',
-      data: [10, 20, 30, 30, 50, 90],
-    }]
+    datasets: [
+      {
+        label: "Nível de Grandiosidade do Batman",
+        backgroundColor: "rgb(255, 0, 0)",
+        borderColor: "rgb(255, 0, 0)",
+        data: [10, 20, 30, 30, 50, 90],
+      },
+    ],
   };
 
   const config = {
-    type: 'line',
+    type: "line",
     data: dataBatman,
-    options: {}
+    options: {},
   };
 
   const myChartBatman = new Chart(
-    document.getElementById('myChartBatman'),
+    document.getElementById("myChartBatman"),
     config
   );
-  
 
-//   function exibir(){
-//       var soma = 0;
-//       for(var i = 0; i < 5; i++){
-//           soma += Number(notas[i]);
-//       }
-//       var media = soma / 5;
-//       alert(media);
-//   }
+  //   function exibir(){
+  //       var soma = 0;
+  //       for(var i = 0; i < 5; i++){
+  //           soma += Number(notas[i]);
+  //       }
+  //       var media = soma / 5;
+  //       alert(media);
+  //   }
 </script>
